@@ -1,0 +1,5 @@
+p.insult {
+    color: green;
+    border: 0px dotted rgba(0, 0, 0, 0);
+    animation: mymove;
+}

@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+}
+body {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 2fr 42vh 3fr 1fr;
+}
+.header {
+    background: black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main {
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+}
+.footer {
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+a {
+    color: white;
+    text-decoration: none;
+    margin: 0.48rem;
+}
+h1 {
+    color: white;
+    font-size: 4.8rem;
+}
+form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 42%;
+    min-height: 20%;
+    background: grey;
+}
+.insult-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+p.insult {
+    text-align: center;
+    width: fit-content;
+    max-width: 70%;
+    animation: scaleUp 1.4s ease-in-out;
+    transition: all 0.7s ease-in-out;
+}
+
+@keyframes scaleUp {
+    from {transform: scaleY(0)}
+    to {transform: scaleY(1)}
+  }

@@ -4,10 +4,12 @@ require("dotenv").config()
 const app = express()
 const PORT = process.env.Port || 3000
 
+app.use(express.static("public"))
+app.use(express.urlencoded())
+
 app.set("view engine", "ejs")
 
 app.get("/", (req, res) => {
-  console.log(req.query)
   const insultList = require("./src/insults.json")
   random = Math.floor(Math.random() * insultList.insults.length)
   res.render("index", {
@@ -31,9 +33,6 @@ app.get("/search", (req, res) => {
     insultList.filter((insults) => insults.origin.includes(req.query.origin))
       .length > 0
   ) {
-    console.log(
-      insultList.filter((insults) => insults.origin.includes(req.query.origin))
-    )
     insultList = insultList.filter((insults) =>
       insults.origin.includes(req.query.origin)
     )
