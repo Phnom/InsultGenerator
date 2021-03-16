@@ -1,0 +1,19 @@
+<main>
+    <form action="/postInsult" method="Post" >
+        <input type="text" name="text" placeholder="text" value="<%= insults ? insults.text : ""%>">
+        <input type="text" name="origin" placeholder="origin" value="<%= insults ? insults.origin : ""%>">
+        <% if (insults) { %>
+            <input type="text" name="id" hidden  value="<%= insults.id %>">
+        <% } %>
+        <select name="severity" placeholder="severity" value="<%= insults ? insults.severity : ''%>" >
+            <option value="">severity</option>
+
+            <% for( let index = 1; index < 10; index++ ) { %>
+                <option value="<%=index%>" <% if (insults && insults.severity == index) { %>
+                 selected="selected"
+                <% } %>><%=index%></option>
+            <% } %>
+        </select>
+        <button type="submit">Post</button>    
+    </form>
+</main>

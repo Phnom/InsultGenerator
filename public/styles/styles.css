@@ -41,12 +41,15 @@ main {
     height: 100%;
     display: flex;
     align-items: flex-start;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 
 h1 {
     color: white;
     font-size: 4.2rem;
+}
+.edit-button {
+    color: black;
 }
 form {
     display: flex;
@@ -60,10 +63,19 @@ input, select {
     border-bottom: 0.18rem solid rgba(0, 0, 0, 0.815);
     border-radius: 4%;
 }
+select {
+    cursor: pointer;
+}
 button {
-    background: white;
+    background: green;
     padding: 0.48rem;
     border-radius: 0.48rem;
+    transition: backgroundColor 0.4s ease-in-out, color 0.2s ease-in-out;
+    cursor: pointer;
+}
+button:hover {
+    background: black;
+    color: green;
 }
 
 .insult-wrapper {
